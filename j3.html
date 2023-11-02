@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      height:100%;
+      width: 100%;
+    }
+    .content{
+      height:100vh;
+      width:100%;
+     
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("https://img.freepik.com/premium-photo/man-creating-assignment_933329-1006.jpg");
+    background-position: center;
+    background-size: cover;
+   }
+    
+    .main-content{
+      padding:20px 20px;
+      border:2px solid black;
+      border-radius: 10px;
+      height:420px;
+    width:400px;
+      display: flex;  
+      flex-direction: column;
+      align-items: center;
+      justify-content:center;
+      background-image: linear-gradient(rgba(247, 243, 243, 0.4),rgba(250, 248, 248, 0.4));
+    border:none;
+    box-shadow: 0 0 20px white;
+    color:#020F1A;
+    }
+    .first-p{
+      padding:10px 10px;
+      width:100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color:#04243f;
+    }
+    .confirm{
+      margin-bottom: 10px;
+      padding:10px 10px;
+      width:100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      color:#04243f;
+    }
+    #second{
+      margin-bottom: 5px;
+      padding:5px 10px;
+      font-size: 20px;
+      border-radius: 50px;
+      border:none;
+     
+    }
+    #first{
+      padding:5px 10px;
+      font-size: 20px;
+      border-radius: 50px;
+      border:none;
+    }
+    #pratham{
+      padding:5px 10px;
+      font-size: 20px;
+      border-radius: 50px;
+      border:none;
+      color:#04243f;
+    }
+    .reset{
+      font-size: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      color:#04243f;
+    }
+    #submit{   
+      padding:5px 20px;
+      font-size: 20px;
+      border:none;
+      border-radius: 10px;
+      z-index: 99;
+    }
+    #submit:hover{
+      cursor: pointer;
+      background-color:rgb(177, 175, 175);
+      color:rgb(48, 46, 46);
+    }
+    input{
+      color:#04243f;
+    }
+    input:focus-within{
+      background-color:#b6d6f0;
+      border:none;
+    }
+
+    i{
+      font-size: 25px;
+    }
+  .fa-arrow-left-long:hover{
+    cursor: pointer;
+    color: #2c5270;
+  }    
+  .result{
+    margin-top: -20px;
+    height:30px;
+    width:90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(255, 0, 0);
+    font-family: arial;
+    font-size: 20px;
+    z-index: 99;
+    display: none;
+  }
+  .submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  label{
+    font-size: 20px;
+  }
+
+  </style>
+</head>
+<body>
+  <form class="content" action="#" method="get" onsubmit="return validate()">
+    <div class="main-content">
+      <label for="" class="reset">Reset Password</label>
+      <div class="first-p">
+        <label class="pra" for="pratham">Username*</label> <input type="text" id="pratham" name="pratham">
+       </div>
+      <div class="first-p">
+       <label class="tra" for="first">Password*</label> <input type="text" id="first" name="first"  >
+      </div>
+      <div class="confirm">
+       <label class="sra" for="second">Confirm Password*</label> <input type="text" id="second" name="second" onkeyup="val(this)">
+      </div>
+
+      <div class="result" id="res"> </div>
+
+      <div class="submit">
+        <i class="fa-solid fa-arrow-left-long" id="arrow"></i>
+        <input type="Submit" value="Submit" id="submit">
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <script>
+    var a = document.querySelector("#arrow");
+    a.addEventListener('click',function(){
+      window.open("j2.html")
+    })
+    
+    var pass = document.getElementById("first");
+    var res = document.getElementById("res");
+    var trd = document.querySelector(".sra");
+
+    function val(elem){
+      
+      if(elem.value.length>0){
+        if(elem.value != pass.value ){
+          res.style.display="block"
+          res.innerText="Confirm password does not match"
+          // trd.style.color="crimson"
+          check=0
+        } else if(elem.value == pass.value){
+          res.style.display="none"
+          trd.style.color=""
+          check=1
+        }
+      }
+      else{
+          res.innerText="Please enter confirm password"
+          // trd.style.color="crimson"
+          check=0
+        }
+    } 
+  
+    var submit = document.querySelector("#submit");
+    var check=1;
+    function validate(){
+      if(check==1){
+        return true;
+      }else{
+        return false;
+
+      }
+    }
+
+
+    var user = document.querySelector(".pra");
+    var sec = document.querySelector(".tra");
+    
+    
+    var pratham = document.getElementById("pratham");
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+
+    pratham.addEventListener('click',()=>{
+      pratham.style.border="white"
+    })
+
+   
+  
+  </script>
+</body>
+</html>
