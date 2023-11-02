@@ -762,7 +762,7 @@
       font-size: 20px;
       transition: 0.1s;
       text-align: justify;
-      overflow-y: scroll;
+
      }
      
      .theory h1{
@@ -840,9 +840,15 @@
       img i{
         font-size: 20px;
       }
+      .theory h1{
+        font-size: 5vw;
+      }
       .theory{
         display: none;
         font-size: 15px;
+        overflow-y: scroll;
+        height:50%;
+       font-size: 4.5vw;
       }
 
       .b-footer{
@@ -876,8 +882,11 @@
        .contact{
         height:50vh;
        }
+       .contact h1{
+        font-size: 4.5vw;
+       }
       .trd-contact{
-        margin-top: 5px;
+        margin-top: 5vw;
         
         width:40%;
         border:none;
@@ -891,11 +900,12 @@
         font-size: 4vw;
        }
       .sec-contact{
-        font-size: 3vw;
+        font-size: 3.5vw;
       }
+      
       #contact{
-        height:250px;
-        width:250px;
+        height:180px;
+        width:180px;
         border-radius: 50%;
         overflow: hidden;
         box-shadow: 0 0 20px black;
@@ -909,7 +919,7 @@
       }
       .logo{
         height:70px;
-          width:40%;
+          width:80%;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -917,7 +927,7 @@
           cursor: pointer;
           color: white;
           font-size: large;
-          font-size: 17px;
+          font-size: 3vw;
       }
      .logo img{
       height:100%;
@@ -950,6 +960,22 @@
         pointer-events: none;
         
        }
+       .content .left{
+        gap:1vw;
+       }
+       .icon i{
+        font-size: 5.5vw;
+       }
+       .content .left h1{
+        font-size: 4.5vw;
+       }
+       .content .left .h3 {
+        font-size: 4vw;
+       }
+       .content .btn{
+        padding:3vw 5vw;
+        font-size: 4vw;
+       }
 
        .sec-content{
         flex-direction: column;
@@ -958,9 +984,19 @@
         width:100%;
         height:100%;
        }
+       .sec-left .sec-btn{
+        padding:3vw 5vw;
+        font-size: 4vw;
+       }
+       .sec-left h2{
+        font-size: 4vw;
+       }
        .sec-right{
         height: 100%;
         width:100%
+       }
+       .sec-right h2{
+        font-size: 4vw;
        }
       
        .in-quiz{
